@@ -61,16 +61,19 @@ public class OfflineExercises {
 	// evenlySpaced(4, 60, 9) --> false
 
 	public boolean evenlySpaced(int a, int b, int c) {
-		int [] oldArray = {a, b, c};
-//		int [] newArray = new int[3];
-		ArrayList<Integer> newArrayList = new ArrayList<Integer>();
-		for (int i : oldArray) {
-			if (i >= oldArray[0] && i >= oldArray[1] && i >= oldArray[2]) {
-				
-				newArrayList.add(i);
-			}
-		}
-		return false;
+		ArrayList<Integer> nums = new ArrayList<Integer>();
+		nums.add(a);
+		nums.add(b);
+		nums.add(c);
+		nums.sort(null);
+		int check1 = nums.get(2) - nums.get(1);
+		int check2 = nums.get(2) - nums.get(0);
+		
+		if ((check1 * 2) == check2) {
+			return true;
+	}
+		
+	return false;
 	}
 
 	// Given a string and an int n, return a string that removes n letters from the 'middle' of the string.
@@ -179,9 +182,15 @@ public class OfflineExercises {
 	public int largest(String arg1) {
 		String[] ary = arg1.split(" ");
 		
-		for (String num : ary) {
+		
+//		for (String num : ary) {
+//			String[] numAry = num.split("");
+//			for (String c : numAry) {
+//				int strAsInt = Integer.parseInt(c);
 			
-		}
+			
+			
+		
 		return 0;
 		
 	}
