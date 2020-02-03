@@ -35,11 +35,15 @@ public class OfflineExercises {
 		String str = "";
 		if  (input.toLowerCase().contains("bert")) {
 			if (input.substring(input.indexOf("bert")+3).contains("bert")) {
-				String betweenBerts = input.substring(input.indexOf("bert")+4, input.lastIndexOf("bert")-1);
+				String betweenBerts = input.substring(input.indexOf("bert")+3, input.lastIndexOf("bert"));
 				for (int i = betweenBerts.length()-1; i > 0; i--) {
 					str += betweenBerts.toCharArray()[i];
+					}
 				} else {
-			}
+					return "";
+				}
+			} else {
+				return "";
 		}		
 		return str;
 	}
