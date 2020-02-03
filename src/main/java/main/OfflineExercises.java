@@ -34,9 +34,10 @@ public class OfflineExercises {
 	public String getBert(String input) {
 		String str = "";
 		String lCInput = input.toLowerCase();
-		if  (input.toLowerCase().contains("bert")) {
+		if  (lCInput.contains("bert")) {
 			if (lCInput.substring(lCInput.indexOf("bert")+3).contains("bert")) {				
-				String betweenBerts = lCInput.substring(lCInput.indexOf("bert")+4, lCInput.lastIndexOf("bert"));
+				String betweenBerts = lCInput.substring(lCInput.indexOf("bert")+4,
+						lCInput.lastIndexOf("bert"));
 				for (int i = betweenBerts.length()-1; i > -1; i--) {
 					str += betweenBerts.toCharArray()[i];
 					}
@@ -129,7 +130,6 @@ public class OfflineExercises {
 			
 		}
 		return -1;
-
 	}
 	
 	//given a string - return the number of times "am" appears in the String
@@ -150,8 +150,7 @@ public class OfflineExercises {
 				count++;
 			}
 		}
-		return count;
-		
+		return count;		
 	}
 	
 	//given a number 
@@ -189,18 +188,21 @@ public class OfflineExercises {
 	//largest("555 72 86 45 10") --> 15
 	
 	public int largest(String arg1) {
-		String[] ary = arg1.split("");
+		String[] ary = arg1.split(" ");
+		int temp = 0;
+		int largest = 0;
 		
+		for (int i = 0; i < ary.length; i++) {
+			for (int j = 0; j < ary[i].length(); j++) {
+				temp += Integer.parseInt(ary[i].substring(j, j+1));
+			}
+			if (largest < temp) {
+				largest = temp;
+			}
+			temp = 0;
+		}			
 		
-//		for (String num : ary) {
-//			String[] numAry = num.split("");
-//			for (String c : numAry) {
-//				int strAsInt = Integer.parseInt(c);
-			
-			
-			
-		
-		return 0;
+		return largest;
 		
 	}
 	

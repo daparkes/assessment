@@ -55,6 +55,7 @@ public class OfflineExercisesTest {
 		assertFalse(oe.endsDev("jh"));
 		assertFalse(oe.endsDev("cooev"));
 		assertFalse(oe.endsDev("oddowiyhy"));
+		assertFalse(oe.endsDev("o"));
 	}
 
 	
