@@ -132,16 +132,25 @@ public class OfflineExercises {
 
 	}
 	
-	//given a string - return the number of times "am" appears in the String ignoring case -
-	// BUT ONLY WHEN the word "am" appears without being followed or proceeded by other letters
+	//given a string - return the number of times "am" appears in the String
+	// ignoring case -
+	// BUT ONLY WHEN the word "am" appears without being followed or proceeded
+	// by other letters
 	//
 	//amISearch("Am I in Amsterdam") --> 1
 	//amISearch("I am in Amsterdam am I?") --> 2
 	//amISearch("I have been in Amsterdam") --> 0
 
 	public int amISearch(String arg1) {
-		
-		return 0;
+		String lowerCaseArg = arg1.toLowerCase();
+		int count = 0;
+		String[] ary = lowerCaseArg.split(" ");
+		for (String element : ary) {
+			if (element.equals("am")) {
+				count++;
+			}
+		}
+		return count;
 		
 	}
 	
@@ -180,7 +189,7 @@ public class OfflineExercises {
 	//largest("555 72 86 45 10") --> 15
 	
 	public int largest(String arg1) {
-		String[] ary = arg1.split(" ");
+		String[] ary = arg1.split("");
 		
 		
 //		for (String num : ary) {
