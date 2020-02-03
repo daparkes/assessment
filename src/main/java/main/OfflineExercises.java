@@ -33,10 +33,11 @@ public class OfflineExercises {
 
 	public String getBert(String input) {
 		String str = "";
+		String lCInput = input.toLowerCase();
 		if  (input.toLowerCase().contains("bert")) {
-			if (input.substring(input.indexOf("bert")+3).contains("bert")) {
-				String betweenBerts = input.substring(input.indexOf("bert")+3, input.lastIndexOf("bert"));
-				for (int i = betweenBerts.length()-1; i > 0; i--) {
+			if (lCInput.substring(lCInput.indexOf("bert")+3).contains("bert")) {				
+				String betweenBerts = lCInput.substring(lCInput.indexOf("bert")+4, lCInput.lastIndexOf("bert"));
+				for (int i = betweenBerts.length()-1; i > -1; i--) {
 					str += betweenBerts.toCharArray()[i];
 					}
 				} else {
