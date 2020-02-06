@@ -72,10 +72,10 @@ public class OfflineExercises {
 		
 		if ((check1 * 2) == check2) {
 			return true;
-	}
+		}
 		
-	return false;
-	}
+		return false;
+		}
 
 	// Given a string and an int n, return a string that removes n letters from the 'middle' of the string.
 	// The string length will be at least n, and be odd when the length of the input is odd.
@@ -125,11 +125,26 @@ public class OfflineExercises {
 	// superBlock("") --> 0
 
 	public int superBlock(String input) {
-		String[] newStr = input.split("");
-		for (String c : newStr) {
-			
+		if (input.equals("") || input == null) {
+			return 0;
 		}
-		return -1;
+		int currentCount = 1;
+		int maxCount = 1;
+		String lastLetter = "";
+		
+		for (int i = 0; i < input.length(); i++) {
+			String letter = input.substring(i, i+1);
+			if (letter.equals(lastLetter)) {
+				currentCount++;
+			} else {
+				if (currentCount > maxCount) {
+					maxCount = currentCount;
+				}
+				currentCount = 1;
+			}
+			lastLetter = letter;
+		}
+		return maxCount;
 	}
 	
 	//given a string - return the number of times "am" appears in the String
